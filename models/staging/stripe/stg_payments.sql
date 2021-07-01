@@ -7,4 +7,5 @@ Select
     amount/100 as amount,
     created as created_at,
     _batched_at as batch_id 
-    from raw.stripe.payment
+    from {{source('stripe','payment')}}
+    -- raw.stripe.payment
