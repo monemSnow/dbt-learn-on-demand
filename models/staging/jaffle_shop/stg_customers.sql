@@ -4,4 +4,6 @@
         last_name
 
   --select *  
-  from raw.jaffle_shop.customers
+  from 
+  --raw.jaffle_shop.customers
+  {{ source('jaffle_shop','customers')}}

@@ -4,6 +4,7 @@
         order_date,
         status
 
-    from raw.jaffle_shop.orders
+    from {{source('jaffle_shop','orders')}}
+    -- raw.jaffle_shop.orders
 
-    -- returned, completed, shipped and placed
+    -- values for status column : returned, completed, shipped and placed
