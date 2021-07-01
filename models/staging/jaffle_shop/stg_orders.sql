@@ -5,3 +5,5 @@
         status
 
     from raw.jaffle_shop.orders
+
+    -- returned, completed, shipped and placed

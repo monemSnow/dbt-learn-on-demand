@@ -7,6 +7,9 @@ payments as (
 select 
     orders.order_id
     ,orders.customer_id
-    ,payments.amount
+    ,sum(coalesce(payments.amount,0)) as amount
      from orders
-        left join payments on payments.order_id=orders.order_id
+        left join payments on payments.order_id=orders.order_id and payments.status = 'success'
+    group by
+        orders.order_id
+        ,orders.customer_id
