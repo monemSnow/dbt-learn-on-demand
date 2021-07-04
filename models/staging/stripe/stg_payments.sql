@@ -4,7 +4,7 @@ Select
     paymentmethod as payment_method,
     status,
     -- Convert cents to dollar amount
-    amount/100 as amount,
+    {{ dollar_to_cent('amount') }} as amount,
     created as created_at,
     _batched_at as batch_id 
     from {{source('stripe','payment')}}
